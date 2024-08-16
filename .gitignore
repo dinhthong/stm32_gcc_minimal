@@ -12,6 +12,8 @@ si/
 *.d
 *.crf
 *.o
+*.map
+*.txt
 #for MDK-ARM IDE generated user files 
 *.uvgui*
 *.o*
