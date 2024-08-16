@@ -12,8 +12,15 @@ si/
 *.d
 *.crf
 *.o
+*.axf
+# Other information related files
+*.bak
 *.map
 *.txt
+*.htm
+*.iex
+*.sct
+*.lnp
 #for MDK-ARM IDE generated user files 
 *.uvgui*
 *.o*
@@ -28,3 +35,4 @@ src_hal/usart6_transmit_DMA/MDK-ARM/Uart Echo Data Using DMA/Uart Echo Data Usin
 
 **/OBJ
 **/build_log.txt
+.uvoptx
