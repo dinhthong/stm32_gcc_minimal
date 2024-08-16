@@ -21,6 +21,7 @@ si/
 *.iex
 *.sct
 *.lnp
+*.png
 #for MDK-ARM IDE generated user files 
 *.uvgui*
 *.o*

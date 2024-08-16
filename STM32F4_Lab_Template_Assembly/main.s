@@ -36,7 +36,17 @@
 ;**********************************************************************************************************
 ;  Demo code of lighting up the Orange LED
 ;**********************************************************************************************************
+.equ RCC_BASE,		(0x40023800)
+.equ RCC_AHB1ENR,	(RCC_BASE + 0x30)
+.equ RCC_AHB1ENR_GPIOAEN,	(1 << 0)
 
+.equ GPIOA_BASE,	(0x40020000)
+.equ GPIOA_MODER,	(GPIOA_BASE + 0x00)
+.equ GPIO_MODER_6_MASK,		(0b11 << 12)
+.equ GPIO_MODER_6_OUTPUT,	(0b01 << 12)
+.equ GPIOA_BSRR,	(GPIOA_BASE + 0x18)
+	
+	
 				INCLUDE core_cm4_constants.s		; Load Constant Definitions
 				INCLUDE stm32f401xc_constants.s     ; 
 
@@ -44,6 +54,8 @@
 				EXPORT	__main						; make __main visible to linker
 				ENTRY			
 				
+
+	
 __main			PROC
 	
 				; Enable Clock of GPIO Port D
