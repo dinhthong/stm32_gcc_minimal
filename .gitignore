@@ -1,6 +1,11 @@
 # stm32 keil c build output
 **/build
+**/build_output
+*.bin
+*.elf
+*.hex
 **/Debug
+**/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0
 **/.vscode
 Listings/
 si/
