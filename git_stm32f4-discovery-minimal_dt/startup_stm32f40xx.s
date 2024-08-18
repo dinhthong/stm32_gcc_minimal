@@ -47,7 +47,7 @@
 
 /* start address for the initialization values of the .data section. 
 defined in linker script */
-.word  _sidata
+.word  _sidata // address on flash
 /* start address for the .data section. defined in linker script */  
 .word  _sdata
 /* end address for the .data section. defined in linker script */
@@ -77,13 +77,18 @@ Reset_Handler:
   b  LoopCopyDataInit
 
 CopyDataInit:
-  ldr  r3, =_sidata
+  ldr  r3, =_sidata // the beginning of .data segment in FLASH
+  // load the value stored in memory address [r3+r1] to r3 register
   ldr  r3, [r3, r1]
+  // store the value of r3 to address of [r0+r1]
   str  r3, [r0, r1]
+  // increase index register r1 to 4
   adds  r1, r1, #4
     
 LoopCopyDataInit:
+  // start of .data segment in RAM
   ldr  r0, =_sdata
+  // end of .data segment in RAM
   ldr  r3, =_edata
   adds  r2, r0, r1
   cmp  r2, r3
